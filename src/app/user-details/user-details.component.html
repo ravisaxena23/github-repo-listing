@@ -1,0 +1,18 @@
+<div class="card mb-3" style="" *ngFor="let user of userDetails">
+  <div class="row g-0">
+    <div class="col-md-4" style="text-align: center;">
+      <img [src]='user.avatar_url' class="" alt="..." style="border-radius: 50%; width: 50%; height: auto;">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{user.name}}</h5>
+        <p class="card-text">{{user.bio}}</p>
+        <p class="card-text"><small class="text-muted"><a [href]="user.url">{{user.url}}</a></small></p>
+        <p class="card-text"><small class="text-muted"><i class="fa-solid fa-location-pin"></i>
+            {{user.location}}</small></p>
+        <p class="card-text"><small class="text-muted" [hidden]="!user.twitter_username">Twitter:
+            {{user.twitter_username}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>

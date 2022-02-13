@@ -1,0 +1,22 @@
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col-md-4" *ngFor="let userRepo of repo">
+    <div class="card" style="min-height: 240px;">
+      <div class="card-body">
+        <a [href]="userRepo.repoLink" target="_blank" style="text-decoration: none;">
+          <h5 class="card-title" style="color: #408bcd; cursor: pointer;">{{userRepo.fullName}}</h5>
+        </a>
+        <p class="card-text">{{userRepo.description}}</p>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <div class="col-md-3" *ngFor="let lang of userRepo.language">
+            <p style="    text-align: center;
+                        border: 2px solid #408bcd;
+                        padding: 5px;
+                        font-size: 14px;
+                        background-color: #408bcd;
+                        color: #fafafa;">{{lang}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

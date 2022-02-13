@@ -1,0 +1,24 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">List Repos</a>
+    <form class="d-flex" (ngSubmit)="submitForm()">
+      <input class="form-control me-2" type="search" placeholder="username goes here" aria-label="Search" type="text"
+        name="search" [(ngModel)]="userName">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<div style="margin-top: 70px;">
+  <app-user-details [userDetails]='userDetails'></app-user-details>
+  <app-repo-listing [repo]='repoData'></app-repo-listing>
+  <ul class="pagination" style="justify-content: center;margin-top: 30px;" [hidden]="!noOfPages">
+    <li class="page-item" (click)="prevNext(false)"><a class="page-link" role="button" tabindex="0"><span
+          aria-hidden="true">Previous</span><span class="visually-hidden">Previous</span></a></li>
+    <li class="page-item" *ngFor=" let index of pages" (click)="pagination(index)"
+      [ngClass]="{active: index==currentNumber}"><a class="page-link" role="button" tabindex="0">{{index}}</a></li>
+    <li class="page-item" (click)="prevNext(true)"><a class="page-link" role="button" tabindex="0"><span
+          aria-hidden="true">Next</span><span class="visually-hidden">Next</span></a></li>
+  </ul>
+  <div *ngIf="loading$ | async" class="loader"></div>
+</div>
+<router-outlet></router-outlet>
