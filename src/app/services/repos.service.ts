@@ -10,7 +10,6 @@ export class ReposService {
 
   getRepos(username:string,page:number){
     var repoApi = 'https://api.github.com/users/' + username + '/repos?per_page=10&page='+page
-    console.log(repoApi)
      return this.http.get(repoApi)
   }
 
