@@ -7,7 +7,7 @@
       <div class="card-body">
         <h5 class="card-title">{{user.name}}</h5>
         <p class="card-text">{{user.bio}}</p>
-        <p class="card-text"><small class="text-muted"><a [href]="user.url">{{user.url}}</a></small></p>
+        <p class="card-text"><small class="text-muted"><a [href]="user.url">{{user.html_url}}</a></small></p>
         <p class="card-text"><small class="text-muted"><i class="fa-solid fa-location-pin"></i>
             {{user.location}}</small></p>
         <p class="card-text"><small class="text-muted" [hidden]="!user.twitter_username">Twitter:
